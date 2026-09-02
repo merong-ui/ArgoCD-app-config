@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 2    # Creates two Pods for high availability.
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/argocd-app:1.2       # The Jenkins pipeline will push the built image here.
+        ports:
+        - containerPort: 8080
