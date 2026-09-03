@@ -20,4 +20,4 @@ spec:
 
     automated:        #to enable argocd fetch any change from git automatically and automatic self-healing
       selfHeal: true
-      prune: true
+      prune: true    # removing resources that do not exist in the desired state defined in the Git repository.
