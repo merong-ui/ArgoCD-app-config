@@ -18,6 +18,6 @@ spec:
     syncOptions:
     - CreateNamespace=true
 
-    automated:
+    automated:        #to enable argocd fetch any change from git automatically and automatic self-healing
       selfHeal: true
       prune: true
